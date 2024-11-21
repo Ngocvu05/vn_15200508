@@ -202,6 +202,9 @@
             }
         }));
 
+        var play=document.getElementById("music");
+            play.play();
+        
         var runAsync = eval(Jscex.compile("async", function () {
             $await(seedAnimate());
             $await(growAnimate());
@@ -209,21 +212,14 @@
             $await(moveAnimate());
 
             textAnimate().start();
-
+            play.start();
             $await(jumpAnimate());
         }));
 
         runAsync().start();
     })();
-    function PlayMusic() {
-
-        var play=document.getElementById("music");
-        play.play();
-        }
-
-        $(document).ready(function(){
-            PlayMusic().start();
-        });
+    
+  
 
     </script>
 </body>
