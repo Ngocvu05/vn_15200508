@@ -169,7 +169,7 @@
             ctx.moveTo(0, 0);
             ctx.scale(0.75, 0.75);
             ctx.font = "12px 微软雅黑,Verdana";
-            ctx.fillText("Click vào đây nhé <3 ", 30, 10);
+            ctx.fillText("Click vào đây nhé <3", 40, 15);
             ctx.restore();
         },
         clear: function() {
