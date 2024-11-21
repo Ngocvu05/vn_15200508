@@ -23,7 +23,7 @@
         </style>
 </head>
     <body>
-        <audio autoplay="autoplay">
+        <audio id="music" autoplay="autoplay">
 			<source src="I-Do-911.mp3" type="audio/mp3"/>
 		</audio>
         
@@ -215,6 +215,16 @@
 
         runAsync().start();
     })();
+    function PlayMusic() {
+
+        var play=document.getElementById("music");
+        play.play();
+        }
+
+        $(document).ready(function(){
+        setTimeout(PlayMusic,3000);
+        });
+
     </script>
 </body>
 </html>
