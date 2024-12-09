@@ -63,9 +63,20 @@
             }
         }
     </style>
+     <script>
+        function loadMenu() {
+            fetch('menu.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('menu-container').innerHTML = data;
+                });
+        }
+        window.onload = loadMenu;
+    </script>
 </head>
 <body>
     <div class="diary-page">
+        <div id="menu-container"></div>
         <h1>Vài dòng tâm sự viết lúc nửa đêm</h1>
         <img src="photo_2.jpg" alt="Emotion">
         <div class="date">02:28 sáng ngày 09/12/2024</div>

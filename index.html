@@ -41,7 +41,7 @@
             <source src="I-Do-911.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
-        <button class="redirect-button" onclick="window.location.href='diary.html'">Gửi em yêu - Phương Nhi</button>
+        <div id="menu-container"></div>
         <div id="main">
             <div id="error">Trình duyệt của bạn không được hỗ trợ. Hoặc sử dụng (<a href="http://www.google.cn/chrome">Chrome</a>) và (<a href="http://firefox.com/download/">Firefox</a>)</div>
              <div id="wrap">
@@ -205,7 +205,7 @@
 		    var together = new Date();
 		    together.setFullYear(2024);
             together.setMonth(9);
-            together.setDate(19)			
+            together.setDate(19 - 1)			
 		    together.setHours(19);							
 		    together.setMinutes(0);				
 		    together.setSeconds(0);					
@@ -235,7 +235,14 @@
         runAsync().start();
     })();
     
-  
+    function loadMenu() {
+            fetch('menu.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('menu-container').innerHTML = data;
+                });
+        }
+        window.onload = loadMenu;
 
     </script>
 </body>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gửi đến em - Phương Nhi</title>
+    <style>
+        body {
+            background-color: #fefbf3;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .diary-page {
+            background: #fffdf7;
+            border: 1px solid #e0d9c7;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+        }
+        .diary-page h1 {
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #6b4226;
+        }
+        .diary-page img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .diary-page p {
+            text-indent: 2em;
+            margin-bottom: 1em;
+        }
+        .diary-page .date {
+            text-align: right;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        .signature {
+            text-align: right;
+            margin-top: 20px;
+            font-style: italic;
+        }
+        @media screen and (max-width: 600px) {
+            .diary-page {
+                width: 90%;
+                padding: 15px;
+            }
+        }
+    </style>
+     <script>
+        function loadMenu() {
+            fetch('menu.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('menu-container').innerHTML = data;
+                });
+        }
+        window.onload = loadMenu;
+    </script>
+</head>
+<body>
+    <div id="menu-container"></div>
+    <div class="diary-page">
+        <h1>Vài dòng tâm sự viết lúc nửa đêm</h1>
+        <img src="photo_2.jpg" alt="Emotion">
+        <div class="date">00:20 AM - ngày 11/12/2024</div>
+        <p>
+            Gửi đến em – Phương Nhi – người con gái anh yêu nhất!
+        </p>
+        <p>
+            Và con tim đã vui trở lại!!
+        </p>
+        <p>
+            Cảm ơn em đã cho anh cơ hội để làm lại cuộc đời :))
+        </p>
+        <p>
+            Anh rất biết ơn và trân trọng điều ấy. 
+        </p>
+        <p>
+            Anh sẽ cố gắng để không khiến em phải thất vọng vì anh nữa
+        </p>
+        
+        <p class="signature">
+            Cảm ơn em!</p><br>
+            Huỳnh Phương Nhi 
+        </p>
+        <img src="photo_1.jpg" alt="Phương Nhi đáng iu <3">
+    </div>
+</body>
+</html>
