@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multilevel Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #333;
+            padding: 0;
+        }
+        .menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .menu > li {
+            position: relative;
+        }
+        .menu > li > a {
+            display: block;
+            padding: 15px 20px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+        .menu > li > a:hover {
+            background-color: #575757;
+        }
+        /* Dropdown menu */
+        .menu li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            list-style-type: none;
+            background-color: #444;
+            padding: 0;
+            margin: 0;
+            min-width: 180px;
+            z-index: 1000;
+        }
+        .menu li:hover > ul {
+            display: block;
+        }
+        .menu li ul li {
+            position: relative;
+        }
+        .menu li ul li a {
+            display: block;
+            padding: 10px 15px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background 0.3s ease;
+        }
+        .menu li ul li a:hover {
+            background-color: #575757;
+        }
+        /* Submenu for the next level */
+        .menu li ul li ul {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+        }
+        .menu li ul li:hover > ul {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <li>
+                <a href="#">Trang chủ</a>
+            </li>
+            <li>
+                <a href="#">Nhật Ký</a>
+                <ul>
+                    <li><a href="#">Tháng 12/2024</a></li>
+                    <li>
+                        <a href="#">More Info</a>
+                        <ul>
+                            <li><a href="#">History</a></li>
+                            <li><a href="#">Vision</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Album</a>
+                <ul>
+                    <li><a href="#">Sẽ bổ sung sau</a></li>
+                    <li><a href="#">Sẽ bổ sung sau</a></li>
+                    <li><a href="#">Sẽ bổ sung sau</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Sẽ bổ sung sau</a>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>
