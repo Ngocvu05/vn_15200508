@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gửi đến em - Phương Nhi</title>
+    <style>
+        body {
+            background-color: #fefbf3;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .diary-page {
+            background: #fffdf7;
+            border: 1px solid #e0d9c7;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+        }
+        .diary-page h1 {
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #6b4226;
+        }
+        .diary-page img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .diary-page p {
+            text-indent: 2em;
+            margin-bottom: 1em;
+        }
+        .diary-page .date {
+            text-align: right;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        .signature {
+            text-align: right;
+            margin-top: 20px;
+            font-style: italic;
+        }
+        @media screen and (max-width: 600px) {
+            .diary-page {
+                width: 90%;
+                padding: 15px;
+            }
+        }
+        .menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .menu > li {
+            position: relative;
+        }
+        .menu > li > a {
+            display: block;
+            padding: 15px 20px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+        .menu > li > a:hover {
+            background-color: #575757;
+        }
+        /* Dropdown menu */
+        .menu li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            list-style-type: none;
+            background-color: #444;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            margin: 0;
+            min-width: 180px;
+            z-index: 1000;
+        }
+        .menu li:hover > ul {
+            display: block;
+        }
+        .menu li ul li {
+            position: relative;
+        }
+        .menu li ul li a {
+            display: block;
+            padding: 10px 15px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background 0.3s ease;
+        }
+        .menu li ul li a:hover {
+            background-color: #575757;
+        }
+        /* Submenu for the next level */
+        .menu li ul li ul {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+        }
+        .menu li ul li:hover > ul {
+            display: block;
+        }
+
+        /* Page content styling */
+        .diary-page {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fffdf7;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .diary-page h1 {
+            font-family: 'Dancing Script', cursive;
+            color: #6b4226;
+            text-align: center;
+        }
+        .diary-page p {
+            text-indent: 2em;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+    </style>
+     <script>
+        function loadMenu() {
+            fetch('menu.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('menu-container').innerHTML = data;
+                });
+        }
+        window.onload = loadMenu;
+    </script>
+</head>
+<body>
+    <div class="diary-page">
+        <div id="menu-container"></div>
+        <h1>Vài dòng tâm sự viết lúc nửa đêm</h1>
+        <img src="photos/flower.gif" alt="Emotion">
+        <div class="date">❤️ Ngày kỷ niệm 19/12/2024 ❤️</div>
+        <p>
+            Gửi đến vợ iu – Phương Nhi! 💕
+        </p>
+        <p>
+            Thời gian có vẻ trôi lâu quá em nhờ. ╮(╯-╰)╭
+        </p>
+        <p>
+           Anh cứ nghĩ rằng chúng ta đã quen nhau lâu lắm rồi cơ. ^_~ 
+        </p>
+        <p>
+           Anh trân trọng từng phút từng giây được bên cạnh em. Với anh có lẽ đó là những giây phút hạnh phúc nhất trong ngày của anh. 👈(⌒▽⌒)👉
+        </p>
+        <p>
+            Có đôi lúc anh còn khiến em phải buồn, khiến em phải vất vả vì anh. Anh xin lỗi em nhé.. Anh sẽ cố gắng khắc phục nó.. (；′⌒`)
+        </p>
+        <p>
+            Từng ngày bên em, đã khiến em hiểu em nhiều hơn. Và khi đó anh càng thương em nhiều hơn. 
+            Nó là động lực to lớn để trái tim anh lúc nào cũng hướng về em, muốn đến bên cạnh em dù là mưa nắng hay là bất kỳ chông gai nào. 
+            Với anh thì những thứ ấy hông đáng sợ bằng việc phải để em ở 1 mình. (✿◕‿◕✿)
+        </p>
+        <p>
+            Anh biết rằng em rất giỏi, em có thể làm được tất cả mọi chuyện, có khi còn làm tốt hơn cả anh nữa. 
+            Nhưng xin em hãy để anh làm giúp em những công việc nhỏ bé ấy, để anh có cơ hội san sẻ nó với em nhé. Mình cùng nhau nắm tay vượt qua khó khăn em nhoaz.
+            Em hãy luôn nhớ rằng sau lưng em luôn có anh, người sẽ luôn ủng hộ em, sẵn sàng ngồi nghe em kể mọi câu chuyện chỉ để thấy em được vui vẻ .
+        </p>
+        <p>
+            Anh sẽ cố gắng nhiều hơn nữa để có thể tự tin sánh bước bên em. Có thể ở bên cạnh em lâu hơn nữa. 
+        </p>
+        <p>
+            Và 1 điều cuối anh muốn nói với em rằng: 
+        </p>
+        <P style="font-style: italic;">
+            ❤️ ANH YÊU EM ❤️ 
+        </P>
+        <P style="font-style: italic;">
+            💕 ANH YÊU EM RẤT NHIỀU 💕
+        </P>
+        <P style="font-style: italic;">
+            😍 ANH THƯƠNG EM RẤT NHIỀU 😍
+        </P>
+        
+        <p class="signature">
+           Người yêu em!<br>
+            Đinh Ngoc Vũ 😜 
+        </p>
+        <img src="photos/special_date.gif" alt="Phương Nhi đáng iu <3">
+        <img src="photos/miss_you.gif" alt="Phương Nhi đáng iu <3">
+    </div>
+</body>
+</html>
