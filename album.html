@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Album with Navigation</title>
+    <title>Album hình riêng của 2 đứa</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -150,6 +150,25 @@
         .menu li ul li:hover > ul {
             display: block;
         }
+        /* Page content styling */
+        .diary-page {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fffdf7;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .diary-page h1 {
+            font-family: 'Dancing Script', cursive;
+            color: #6b4226;
+            text-align: center;
+        }
+        .diary-page p {
+            text-indent: 2em;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
     </style>
      <script>
         function loadMenu() {
@@ -163,12 +182,12 @@
     </script>
 </head>
 <body>
-    <h1>Image Album</h1>
+    <h1> Ngọc Vũ<3 Phương Nhi <3></h1>
     <div class="album-container">
         <img id="mainImage" class="main-image" src="https://lh3.googleusercontent.com/pw/AP1GczOn4rQJyfwjyDOlkHxjEWs292cIWdslU7RRBzaxgcehFT7AVjKYkO9roAcXfMMavdZbpYKE3JCFxqhdzuwxuk4e-h6lBWTMhQSkZJwxiBfRwtFZ_wpJ=w784-h1046-no" alt="Main Image">
         <div class="controls">
-            <button id="prevBtn">Previous</button>
-            <button id="nextBtn">Next</button>
+            <button id="prevBtn">Xem lại</button>
+            <button id="nextBtn">Ảnh kế tiếp</button>
         </div>
         <div class="thumbnail-container" id="thumbnailContainer">
             <!-- Thumbnails will be dynamically added here -->
