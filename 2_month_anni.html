@@ -125,24 +125,26 @@
             display: block;
         }
 
-        /* Page content styling */
-        .diary-page {
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: #fffdf7;
-            padding: 20px;
+        .image-row {
+            display: flex;
+            flex-wrap: wrap; /* Ensures responsiveness */
+            justify-content: center; /* Center-align images */
+            gap: 20px; /* Space between images */
+            margin: 20px;
+        }
+
+        .image-row img {
+            width: calc(50% - 20px); /* Two images per row, accounting for gap */
+            max-width: 300px; /* Prevents images from becoming too large */
+            height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        .diary-page h1 {
-            font-family: 'Dancing Script', cursive;
-            color: #6b4226;
-            text-align: center;
-        }
-        .diary-page p {
-            text-indent: 2em;
-            line-height: 1.6;
-            margin: 10px 0;
+
+        .image-row img:hover {
+            transform: scale(1.05); /* Slight zoom on hover */
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Shadow effect */
         }
     </style>
      <script>
@@ -207,8 +209,10 @@
            Người yêu em!<br>
             Đinh Ngoc Vũ 😜 
         </p>
-        <img src="photos/special_date.gif" alt="Phương Nhi đáng iu <3">
-        <img src="photos/miss_you.gif" alt="Phương Nhi đáng iu <3">
+        <div class="image-row">
+            <img src="photos/special_date.gif" alt="Phương Nhi đáng iu <3">
+            <img src="photos/miss_you.gif" alt="Phương Nhi đáng iu <3">
+        </div>
     </div>
 </body>
 </html>
