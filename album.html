@@ -3,18 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Photos Album</title>
+    <title>Image Album with Navigation</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .album-container {
+            position: relative;
+            max-width: 600px;
+            width: 100%;
             text-align: center;
         }
-        nav {
-            background-color: #333;
-            padding: 0;
+
+        .main-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .controls button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .controls button:hover {
+            background-color: #0056b3;
         }
         .menu {
             list-style-type: none;
@@ -44,6 +84,8 @@
             left: 0;
             list-style-type: none;
             background-color: #444;
+            list-style: none;
+            margin: 0;
             padding: 0;
             margin: 0;
             min-width: 180px;
@@ -76,52 +118,68 @@
         .menu li ul li:hover > ul {
             display: block;
         }
-        h1 {
-            margin-bottom: 20px;
-        }
-
-        .album-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .album img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .album img:hover {
-            transform: scale(1.1);
-        }
     </style>
-    <script>
-       function loadMenu() {
-        fetch('menu.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('menu-container').innerHTML = data;
-            });
-    }
-    window.onload = loadMenu;
-</script>
+     <script>
+        function loadMenu() {
+            fetch('menu.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('menu-container').innerHTML = data;
+                });
+        }
+        window.onload = loadMenu;
+    </script>
 </head>
 <body>
-    <h1>My Google Photos Album</h1>
+    <h1>Image Album</h1>
     <div class="album-container">
-        <!-- Replace with your own image URLs -->
-        <div class="album">
-            <img src="https://lh3.googleusercontent.com/pw/AP1GczM2CHNkyv_1zcMrjUF__IUfkTWlkZVhKqrE41WEiJanMKFoBWbfRcc6QNfV5NvVrqNfIlVsezqS-iCIfb08qXTl2S_An3lNTR6LyDfmDZH_kICZKDiL=w784-h1046-no" alt="Image 1">
-        </div>
-        <div class="album">
-            <img src="https://lh3.googleusercontent.com/pw/AP1GczM2CHNkyv_1zcMrjUF__IUfkTWlkZVhKqrE41WEiJanMKFoBWbfRcc6QNfV5NvVrqNfIlVsezqS-iCIfb08qXTl2S_An3lNTR6LyDfmDZH_kICZKDiL=w784-h1046-no" alt="Image 2">
-        </div>
-        <div class="album">
-            <img src="https://lh3.googleusercontent.com/pw/AP1GczM2CHNkyv_1zcMrjUF__IUfkTWlkZVhKqrE41WEiJanMKFoBWbfRcc6QNfV5NvVrqNfIlVsezqS-iCIfb08qXTl2S_An3lNTR6LyDfmDZH_kICZKDiL=w784-h1046-no" alt="Image 3">
+        <img id="mainImage" class="main-image" src="https://lh3.googleusercontent.com/pw/AP1GczOn4rQJyfwjyDOlkHxjEWs292cIWdslU7RRBzaxgcehFT7AVjKYkO9roAcXfMMavdZbpYKE3JCFxqhdzuwxuk4e-h6lBWTMhQSkZJwxiBfRwtFZ_wpJ=w784-h1046-no" alt="Main Image">
+        <div class="controls">
+            <button id="prevBtn">Previous</button>
+            <button id="nextBtn">Next</button>
         </div>
     </div>
+
+    <script>
+        // Array of image URLs
+        const images = [
+            "https://lh3.googleusercontent.com/pw/AP1GczM2CHNkyv_1zcMrjUF__IUfkTWlkZVhKqrE41WEiJanMKFoBWbfRcc6QNfV5NvVrqNfIlVsezqS-iCIfb08qXTl2S_An3lNTR6LyDfmDZH_kICZKDiL=w784-h1046-no",
+            "https://lh3.googleusercontent.com/pw/AP1GczPQl9-1JWjivNR_HArvOeUirUbi3WCzq0t7UmAqSo-0xH-cDQPrAvLQuy6qPrXe1PQXuRtuZf5GFOAcQyYshMeANDrqS52S7Y3VHVOT9r0z8h_qHBItALuU6hzuhv43q_Xabiq4PamrPHsoQMBKNuFYSQ=w981-h1308-s-no-gm",
+            "https://lh3.googleusercontent.com/pw/AP1GczPQl9-1JWjivNR_HArvOeUirUbi3WCzq0t7UmAqSo-0xH-cDQPrAvLQuy6qPrXe1PQXuRtuZf5GFOAcQyYshMeANDrqS52S7Y3VHVOT9r0z8h_qHBItALuU6hzuhv43q_Xabiq4PamrPHsoQMBKNuFYSQ=w981-h1308-s-no-gm",
+            "https://lh3.googleusercontent.com/pw/AP1GczOQ3lbB9NE1DbkwVeHV4Emz-tuDM8drIKEc4BmhcQnfGn1BqFciZsIAWaL6nO_s_A6UiqltE0S02LGGcVngT7IoxNCtKiiYW6pJv2uyguWcNJtaQBbEG58tPFGWTBI6KFJgoRF2P0SXvoBOADhnKcsTSg=w1744-h1308-s-no-gm",
+            "https://lh3.googleusercontent.com/pw/AP1GczOQ3lbB9NE1DbkwVeHV4Emz-tuDM8drIKEc4BmhcQnfGn1BqFciZsIAWaL6nO_s_A6UiqltE0S02LGGcVngT7IoxNCtKiiYW6pJv2uyguWcNJtaQBbEG58tPFGWTBI6KFJgoRF2P0SXvoBOADhnKcsTSg=w1744-h1308-s-no-gm",
+            "https://lh3.googleusercontent.com/pw/AP1GczNaIgLVtjVyjWmiln8dNN6uoXQacY-nhBdUzgHl1G-WSvGbFEVHuDY7abcI6RK0svJUf1tfMYik6_XEDUQgzwJZ05ETLy_smhFXV1DRNfBGhOatnIreqmq1kf7Espe4VORQnJICA-Le-fVYtP5Xm13Ojg=w853-h1280-s-no-gm",
+            "https://lh3.googleusercontent.com/pw/AP1GczMCdu28MrGgKj1X5F84DmW2bS4-jWlqQQNeyLihR6-qsWdVkgFznQZvKEDwE2fK0ZS-WbZCBZE4ktTSe63R5ku51AaRTPeJIqg99JYvfV-nB3IqhzRKXyUmgKyibon0W562L17BXDI_RE3MJKBIGrZP1A=w953-h960-s-no-gm",
+            "https://lh3.googleusercontent.com/pw/AP1GczMCdu28MrGgKj1X5F84DmW2bS4-jWlqQQNeyLihR6-qsWdVkgFznQZvKEDwE2fK0ZS-WbZCBZE4ktTSe63R5ku51AaRTPeJIqg99JYvfV-nB3IqhzRKXyUmgKyibon0W562L17BXDI_RE3MJKBIGrZP1A=w953-h960-s-no-gm",
+            "https://lh3.googleusercontent.com/pw/AP1GczMVAwhK0TuU_v2brdc8GVK4nRt45n0jgI9_quORqUDr8vMdxJTQNC5XxKH0P8kNW0GWY9t93QDRRtFb3AcLxFdwodKJWDNS2AezpzUi9YTdzc1mTfjqa-PE5f7G0DV2eI9bUf9tLgGI1GNtTzPy0ZrcHg=w981-h1308-s-no-gm",
+            "https://lh3.googleusercontent.com/pw/AP1GczM8tVcTp5V1_TgJD0YAp0WENqzlJzmN1oDmAEEOnomM6oZzWEP9X9x9w0d4oSY_h_SoSqfQkbqrQmIGHv9KZJo9aTI6eSKnF_XF073z2Z29szMFl_Llufl3qO80tt_SMUzWXfapGf8DUj7AmF17z6poSg=w981-h1308-s-no-gm",
+            "https://lh3.googleusercontent.com/pw/AP1GczM8tVcTp5V1_TgJD0YAp0WENqzlJzmN1oDmAEEOnomM6oZzWEP9X9x9w0d4oSY_h_SoSqfQkbqrQmIGHv9KZJo9aTI6eSKnF_XF073z2Z29szMFl_Llufl3qO80tt_SMUzWXfapGf8DUj7AmF17z6poSg=w981-h1308-s-no-gm",
+            "https://lh3.googleusercontent.com/pw/AP1GczOds0aTHo8dEmPUQ72wSwYwpe23RfZ1C-GsOFtzWk_Qc6ZbHLJW7mj4pxLVQsowupzgxWKYWwY7AsdNYyleKOFgaMwVv0nGw3L5UWDvsDTjSNDLj1aB=w784-h1046-no",
+            "https://lh3.googleusercontent.com/pw/AP1GczOn4rQJyfwjyDOlkHxjEWs292cIWdslU7RRBzaxgcehFT7AVjKYkO9roAcXfMMavdZbpYKE3JCFxqhdzuwxuk4e-h6lBWTMhQSkZJwxiBfRwtFZ_wpJ=w784-h1046-no"
+
+        ];
+
+        // Reference to the main image element
+        const mainImage = document.getElementById("mainImage");
+
+        // Current image index
+        let currentIndex = 0;
+
+        // Function to update the main image
+        function updateImage(index) {
+            mainImage.src = images[index];
+        }
+
+        // Event listeners for buttons
+        document.getElementById("prevBtn").addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length; // Wrap around to the last image
+            updateImage(currentIndex);
+        });
+
+        document.getElementById("nextBtn").addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % images.length; // Wrap around to the first image
+            updateImage(currentIndex);
+        });
+    </script>
 </body>
 </html>
