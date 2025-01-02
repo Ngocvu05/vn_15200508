@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diary Page - Phương Nhi</title>
+    <title>Diary Page - Typing Effect</title>
     <style>
         body {
             margin: 0;
@@ -22,7 +22,6 @@
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             border: 2px solid #ffcc99;
-            position: relative;
         }
 
         .diary-container h1 {
@@ -35,17 +34,12 @@
         .content {
             font-size: 20px;
             color: #5a4033;
-            position: relative;
+            white-space: pre-wrap;
         }
 
         .line {
-            overflow: hidden;
-            position: relative;
-            height: 30px; /* Adjust for each row's height */\n            white-space: nowrap;\n        }
-
-        .line span {\n            display: inline-block;\n            position: absolute;\n            animation: runningRow 10s linear infinite;\n        }
-
-        @keyframes runningRow {\n            0% {\n                transform: translateX(100%);\n            }\n            100% {\n                transform: translateX(-100%);\n            }\n        }
+            margin-bottom: 10px;
+        }
 
         .signature {
             text-align: right;
@@ -67,30 +61,60 @@
 </head>
 <body>
     <div class="diary-container">
-        <h1>Gửi em yêu – Phương Nhi!</h1>
-        <div class="content">
-            <div class="line"><span>Vậy là năm 2024 đã qua, và 2025 đã đến.</span></div>
-            <div class="line"><span>Anh nhận thấy rằng năm qua được yêu em là điều hạnh phúc to lớn nhất của anh.</span></div>
-            <div class="line"><span>Dù có đôi lúc vẫn còn khiến em buồn vì những thiếu sót của anh.</span></div>
-            <div class="line"><span>Nhưng nhìn chung thì thời gian qua với chúng ta là khoảng thời gian hạnh phúc phải không em?</span></div>
-            <div class="line"><span>Năm 2025 này, anh hy vọng rằng…</span></div>
-            <div class="line"><span>Tình yêu của anh và em sẽ ngày càng phát triển tốt hơn nữa, sẽ càng gắn kết hơn.</span></div>
-            <div class="line"><span>Sẽ có những khoảnh khắc, kỷ niệm thật là hạnh phúc và ngọt ngào.</span></div>
-            <div class="line"><span>Để những điều ấy có thể thành hiện thực anh cần có sự hợp tác của em nữa.</span></div>
-            <div class="line"><span>Em hãy giúp anh nhé ❤.</span></div>
-            <div class="line"><span>Năm mới.. anh chúc em…</span></div>
-            <div class="line"><span>Sẽ luôn luôn xinh đẹp, vui vẻ và có thật nhiều niềm vui và hạnh phúc bên gia đình.</span></div>
-            <div class="line"><span>Mỗi ngày thức dậy là 1 ngày tuyệt vời để em tận hưởng.</span></div>
-            <div class="line"><span>Công việc thì thuận buồm xuôi gió.</span></div>
-            <div class="line"><span>Tháng nào cũng vượt KPI đề ra, chốt đơn chốt số siêu tốc.</span></div>
-            <div class="line"><span>Được Sếp và đồng nghiệp quan tâm giúp đỡ nhiều hơn.</span></div>
-            <div class="line"><span>Hoàn thành được các mục tiêu của bản thân đề ra.</span></div>
-            <div class="line"><span>Yêu em nhiều.</span></div>            
+        <h1>Dear Phương Nhi,</h1>
+        <div class="content" id="content">
+            <!-- Typing effect will inject text here -->
         </div>
         <div class="signature">
             “Your Darling” - Ngọc Vũ
         </div>
         <div class="footer">Happy New Year 2025!</div>
     </div>
+
+    <script>
+        const lines = [
+            "Gửi em yêu – Phương Nhi!",
+            "Vậy là năm 2024 đã qua, và 2025 đã đến.",
+            "Anh nhận thấy rằng năm qua được yêu em là điều hạnh phúc to lớn nhất của anh.",
+            "Dù có đôi lúc vẫn còn khiến em buồn vì những thiếu sót của anh.",
+            "Nhưng nhìn chung thì thời gian qua với chúng ta là khoảng thời gian hạnh phúc phải không em?",
+            "Năm 2025 này, anh hy vọng rằng…",
+            "Tình yêu của anh và em sẽ ngày càng phát triển tốt hơn nữa, sẽ càng gắn kết hơn.",
+            "Sẽ có những khoảnh khắc, kỷ niệm thật là hạnh phúc và ngọt ngào.",
+            "Để những điều ấy có thể thành hiện thực anh cần có sự hợp tác của em nữa.",
+            "Em hãy giúp anh nhé ❤.",
+            "Năm mới.. anh chúc em…",
+            "Sẽ luôn luôn xinh đẹp, vui vẻ và có thật nhiều niềm vui và hạnh phúc bên gia đình.",
+            "Mỗi ngày thức dậy là 1 ngày tuyệt vời để em tận hưởng.",
+            "Công việc thì thuận buồm xuôi gió.",
+            "Tháng nào cũng vượt KPI đề ra, chốt đơn chốt số siêu tốc.",
+            "Được Sếp và đồng nghiệp quan tâm giúp đỡ nhiều hơn.",
+            "Hoàn thành được các mục tiêu của bản thân đề ra.",
+            "Yêu em nhiều.",
+            "“Your Darling” - Ngọc Vũ"
+        ];
+
+        const contentDiv = document.getElementById("content");
+        let currentLine = 0;
+        let currentChar = 0;
+
+        function typeLine() {
+            if (currentLine < lines.length) {
+                const line = lines[currentLine];
+                if (currentChar < line.length) {
+                    contentDiv.innerHTML += line[currentChar];
+                    currentChar++;
+                    setTimeout(typeLine, 50); // Typing speed (50ms per character)
+                } else {
+                    contentDiv.innerHTML += "<br>";
+                    currentLine++;
+                    currentChar = 0;
+                    setTimeout(typeLine, 300); // Delay before next line
+                }
+            }
+        }
+
+        typeLine(); // Start typing effect
+    </script>
 </body>
 </html>
