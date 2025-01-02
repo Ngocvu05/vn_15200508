@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Album hình riêng của 2 đứa</title>
+    <link rel="stylesheet" href="/css/menu.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -109,68 +110,7 @@
                 transform: scale(1.3);
             }
         }
-        .menu {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-        .menu > li {
-            position: relative;
-        }
-        .menu > li > a {
-            display: block;
-            padding: 15px 20px;
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-            transition: background 0.3s ease;
-        }
-        .menu > li > a:hover {
-            background-color: #575757;
-        }
-        /* Dropdown menu */
-        .menu li ul {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            list-style-type: none;
-            background-color: #444;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            margin: 0;
-            min-width: 180px;
-            z-index: 1000;
-        }
-        .menu li:hover > ul {
-            display: block;
-        }
-        .menu li ul li {
-            position: relative;
-        }
-        .menu li ul li a {
-            display: block;
-            padding: 10px 15px;
-            color: #fff;
-            text-decoration: none;
-            font-size: 14px;
-            transition: background 0.3s ease;
-        }
-        .menu li ul li a:hover {
-            background-color: #575757;
-        }
-        /* Submenu for the next level */
-        .menu li ul li ul {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 100%;
-        }
-        .menu li ul li:hover > ul {
-            display: block;
-        }
+
         /* Page content styling */
         .diary-page {
             max-width: 800px;
