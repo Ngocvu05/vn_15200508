@@ -34,26 +34,18 @@
 
         .content {
             font-size: 20px;
-            white-space: nowrap;
+            color: #5a4033;
+            position: relative;
+        }
+
+        .line {
             overflow: hidden;
             position: relative;
-            color: #5a4033;
-        }
+            height: 30px; /* Adjust for each row's height */\n            white-space: nowrap;\n        }
 
-        .content span {
-            display: inline-block;
-            position: absolute;
-            animation: runningText 30s linear infinite;
-        }
+        .line span {\n            display: inline-block;\n            position: absolute;\n            animation: runningRow 10s linear infinite;\n        }
 
-        @keyframes runningText {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
+        @keyframes runningRow {\n            0% {\n                transform: translateX(100%);\n            }\n            100% {\n                transform: translateX(-100%);\n            }\n        }
 
         .signature {
             text-align: right;
@@ -75,20 +67,25 @@
 </head>
 <body>
     <div class="diary-container">
-        <h1>Dear Phương Nhi,</h1>
+        <h1>Gửi em yêu – Phương Nhi!</h1>
         <div class="content">
-            <span>
-                Gửi em yêu – Phương Nhi!<br>
-                Vậy là năm 2024 đã qua, và 2025 đã đến. Anh nhận thấy rằng năm qua được yêu em là điều hạnh phúc to lớn nhất của anh.<br>
-                Dù có đôi lúc vẫn còn khiến em buồn vì những thiếu sót của anh. Nhưng nhìn chung thì thời gian qua với chúng ta là khoảng thời gian hạnh phúc phải không em?<br>
-                Năm 2025 này, anh hy vọng rằng…<br>
-                Tình yêu của anh và em sẽ ngày càng phát triển tốt hơn nữa, sẽ càng gắn kết hơn. Sẽ có những khoảnh khắc, kỷ niệm thật là hạnh phúc và ngọt ngào. Để những điều ấy có thể thành hiện thực anh cần có sự hợp tác của em nữa. Em hãy giúp anh nhé &lt;3.<br>
-                Năm mới.. anh chúc em…<br>
-                Sẽ luôn luôn xinh đẹp, vui vẻ và có thật nhiều niềm vui và hạnh phúc bên gia đình. Mỗi ngày thức dậy là 1 ngày tuyệt vời để em tận hưởng.<br>
-                Công việc thì thuận buồm xuôi gió. Tháng nào cũng vượt KPI đề ra, chốt đơn chốt số siêu tốc. Được Sếp và đồng nghiệp quan tâm giúp đỡ nhiều hơn. Hoàn thành được các mục tiêu của bản thân để ra.<br>
-                Yêu em nhiều.<br>
-                “Your Darling” - Ngọc Vũ
-            </span>
+            <div class="line"><span>Vậy là năm 2024 đã qua, và 2025 đã đến.</span></div>
+            <div class="line"><span>Anh nhận thấy rằng năm qua được yêu em là điều hạnh phúc to lớn nhất của anh.</span></div>
+            <div class="line"><span>Dù có đôi lúc vẫn còn khiến em buồn vì những thiếu sót của anh.</span></div>
+            <div class="line"><span>Nhưng nhìn chung thì thời gian qua với chúng ta là khoảng thời gian hạnh phúc phải không em?</span></div>
+            <div class="line"><span>Năm 2025 này, anh hy vọng rằng…</span></div>
+            <div class="line"><span>Tình yêu của anh và em sẽ ngày càng phát triển tốt hơn nữa, sẽ càng gắn kết hơn.</span></div>
+            <div class="line"><span>Sẽ có những khoảnh khắc, kỷ niệm thật là hạnh phúc và ngọt ngào.</span></div>
+            <div class="line"><span>Để những điều ấy có thể thành hiện thực anh cần có sự hợp tác của em nữa.</span></div>
+            <div class="line"><span>Em hãy giúp anh nhé ❤.</span></div>
+            <div class="line"><span>Năm mới.. anh chúc em…</span></div>
+            <div class="line"><span>Sẽ luôn luôn xinh đẹp, vui vẻ và có thật nhiều niềm vui và hạnh phúc bên gia đình.</span></div>
+            <div class="line"><span>Mỗi ngày thức dậy là 1 ngày tuyệt vời để em tận hưởng.</span></div>
+            <div class="line"><span>Công việc thì thuận buồm xuôi gió.</span></div>
+            <div class="line"><span>Tháng nào cũng vượt KPI đề ra, chốt đơn chốt số siêu tốc.</span></div>
+            <div class="line"><span>Được Sếp và đồng nghiệp quan tâm giúp đỡ nhiều hơn.</span></div>
+            <div class="line"><span>Hoàn thành được các mục tiêu của bản thân đề ra.</span></div>
+            <div class="line"><span>Yêu em nhiều.</span></div>            
         </div>
         <div class="signature">
             “Your Darling” - Ngọc Vũ
