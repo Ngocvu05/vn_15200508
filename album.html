@@ -140,6 +140,17 @@
     <script>
         // Array of image URLs
         const images = [
+            "https://lh3.googleusercontent.com/pw/AP1GczN0W6CDeTvT2tUb4Nh6JzQ26Y_qLQ0bo39vl7Q8XvzJHhMmY3Zzw-EysgfwITHYZaXk3IPOiwIKCZjpG4nogkkwdnPnoKC76ZaOZAJdeqU7pVEGvZbQW9MqOBrEdrh6anoRBO5KquKUD5gKNkCAAoDj7g=w960-h1280-s-no-gm",
+            "https://lh3.googleusercontent.com/pw/AP1GczNqo7bJx9vQIyQThGUeoPe0_mN5UkoN4KqBjjXrFHZu8olh66VTuUtw65ERj1SVU8hmHyXge1N7pBwBoTsNHZGzuXyELFnq1h5PUAbcNM_tUu4jfkVXpkucAkFOq50aGBt-NIWvq6gJ_GgwhDkx0LFnpw=w1707-h1280-s-no-gm",
+            "https://lh3.googleusercontent.com/pw/AP1GczNeigHAhp65DCyy0De1DHG6tJP1TSPJwLlHcsbih2czLkiF1t42JC5fu72kJF5cF5vIi0CjbxDjH28YlAhPy3Ibn2nvlh8bnhyLxh9NndCUQDGqh_XzNbPyZ_AlI-fS1pfMIibxHnTu1WBhRwyVaRkgIA=w1707-h1280-s-no-gm",
+            "https://lh3.googleusercontent.com/pw/AP1GczMyiDM_dL-jtW5mUQ65IZeflgsk2DlUIyycuFp_gnyOw8rRhLIXyS8f_3liMYoZsH84ejNjRKMkesh0CuwTLLP7HXh4_ga8rpO8nn39Iq-vG8oZkQte6eTH1WUragwmi7B9F7eLDRWLVNI4QBOY42MIDw=w1707-h1280-s-no-gm",
+            "https://lh3.googleusercontent.com/pw/AP1GczM9V2giWuNaW-JHljSVMkAdEFMNrWoVpbb4_apXSNUmmk56U91yPOH09R6cLlESkSPn_DryHLofOnIM9kEj7xCCFSjV6SAOVTZtZjsq8p95xLJgZKvYvtF97aADgot9eI1ip3cc8Aeznwk5a0bNuVWN1g=w960-h1280-s-no-gm",
+            "https://lh3.googleusercontent.com/pw/AP1GczO35LTwA6vuYT67ge2hA9AfoTOFFVFsA_jM-h0K_nrzD1dGJ3noBBnE4Px-hmRd7E-KRB7oZy3wFkfOqctCdI8EUhscRU1jTzJFgrf1ISPIEJzOHMOTmPh2tVUjaK5mdwjFfTfQuQbA3S5pwiDJPf3tXw=w960-h1280-s-no-gm",
+            "https://lh3.googleusercontent.com/pw/AP1GczN7923Xp0OXeRfxjTMryA66CM14Nqv-APXm545l9edFr7xYSUyJ0L4JAA1pN1HmYBFffoqKyei2-gMwLJy_7b0l204dYsX2u8dtyNTp2HXtkXkbEuxdA9PeV_8Qm4RZ4D98Ru0-mPPtoXPJ_ei39tCjQw=w1707-h1280-s-no-gm",
+            "https://lh3.googleusercontent.com/pw/AP1GczPPW5UYuIg5yHjr19Qvt9SCVOpKLxUWXz94lPrkXb5n4peLODewLVvxemMhjbMhjIHr1XOU7Yf5IDB0I0HMrwwWrp3pSmHzrCsT59i2u-rt3vA_M6yNBaOrRr2u7joj_0A8eaBt45S_Xdwli11OdzOWwA=w960-h1280-s-no-gm",
+            "https://lh3.googleusercontent.com/pw/AP1GczMDttr4rjE0KeZrGsk1ody-dXsOLakrnFugsCuEzSDpARY0cyU0JM4BkkVrJFdo-MSwsJWF6an0gESFXeAX_O86ziC5iXL57E08SWthJ8BKzVdsiIUY9G1RMw1AY3M49FVhKdJTzeIoMOIBRq90SAKL5w=w960-h1280-s-no-gm",
+            "https://lh3.googleusercontent.com/pw/AP1GczPDGxYdzkFRp7vs5BC9fsnjRO4UlvDklUDz9i2z69vCO_hsws7cSiLyxkQgwKU4neqGdpchsdp5XBOhxjrbVX2zDmjQsfTCtPVNDKotQA3SDfJir7n9V02tf4GPbnmv1zzIaebEz6-KSKbo5IBTUzXdWw=w1163-h872-s-no-gm",
+            "https://lh3.googleusercontent.com/pw/AP1GczPjGgnRS5H08zEmowgYQma8H9OM3Ey1NZMeqZ9sISi66f_lxZOwSIJu4OKz26xMhdX-gzT1EsHtqP7n80K5XetGbG9q0t-b3aKJE-2T0E9xKEJjy_s3ZEeSf9Q9Xmih7N6D8Hfo_ao0A-iCuvbYDyBSvA=w960-h1280-s-no-gm",
             "https://lh3.googleusercontent.com/pw/AP1GczM2CHNkyv_1zcMrjUF__IUfkTWlkZVhKqrE41WEiJanMKFoBWbfRcc6QNfV5NvVrqNfIlVsezqS-iCIfb08qXTl2S_An3lNTR6LyDfmDZH_kICZKDiL=w784-h1046-no",
             "https://lh3.googleusercontent.com/pw/AP1GczO4TDtEIXSZMSEzjBdgpnA7PmydXormA_I2IL6swSschfIVV-d8Qslz6CNKG75MqzmgOWV4R7dgf5B161nV0VxVlegFBNWQgvsT_J0pPiAIzUI1ua-jYA51Ob-aglFcds1viLh3J_-WSMGmgeauFW-5rQ=w981-h1308-s-no-gm",
             "https://lh3.googleusercontent.com/pw/AP1GczPQl9-1JWjivNR_HArvOeUirUbi3WCzq0t7UmAqSo-0xH-cDQPrAvLQuy6qPrXe1PQXuRtuZf5GFOAcQyYshMeANDrqS52S7Y3VHVOT9r0z8h_qHBItALuU6hzuhv43q_Xabiq4PamrPHsoQMBKNuFYSQ=w981-h1308-s-no-gm",
@@ -153,7 +164,7 @@
             "https://lh3.googleusercontent.com/pw/AP1GczM8tVcTp5V1_TgJD0YAp0WENqzlJzmN1oDmAEEOnomM6oZzWEP9X9x9w0d4oSY_h_SoSqfQkbqrQmIGHv9KZJo9aTI6eSKnF_XF073z2Z29szMFl_Llufl3qO80tt_SMUzWXfapGf8DUj7AmF17z6poSg=w981-h1308-s-no-gm",
             "https://lh3.googleusercontent.com/pw/AP1GczOds0aTHo8dEmPUQ72wSwYwpe23RfZ1C-GsOFtzWk_Qc6ZbHLJW7mj4pxLVQsowupzgxWKYWwY7AsdNYyleKOFgaMwVv0nGw3L5UWDvsDTjSNDLj1aB=w784-h1046-no",
             "https://lh3.googleusercontent.com/pw/AP1GczOn4rQJyfwjyDOlkHxjEWs292cIWdslU7RRBzaxgcehFT7AVjKYkO9roAcXfMMavdZbpYKE3JCFxqhdzuwxuk4e-h6lBWTMhQSkZJwxiBfRwtFZ_wpJ=w784-h1046-no",
-			"https://lh3.googleusercontent.com/pw/AP1GczO4TDtEIXSZMSEzjBdgpnA7PmydXormA_I2IL6swSschfIVV-d8Qslz6CNKG75MqzmgOWV4R7dgf5B161nV0VxVlegFBNWQgvsT_J0pPiAIzUI1ua-jYA51Ob-aglFcds1viLh3J_-WSMGmgeauFW-5rQ=w981-h1308-s-no-gm"
+            "https://lh3.googleusercontent.com/pw/AP1GczO4TDtEIXSZMSEzjBdgpnA7PmydXormA_I2IL6swSschfIVV-d8Qslz6CNKG75MqzmgOWV4R7dgf5B161nV0VxVlegFBNWQgvsT_J0pPiAIzUI1ua-jYA51Ob-aglFcds1viLh3J_-WSMGmgeauFW-5rQ=w981-h1308-s-no-gm",
         ];
 
         // Reference to the main image element
